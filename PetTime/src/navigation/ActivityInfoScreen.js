@@ -16,7 +16,7 @@ import {
   Dimensions,
 } from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const win = Dimensions.get('window');
 import {NavigationService} from '../common';

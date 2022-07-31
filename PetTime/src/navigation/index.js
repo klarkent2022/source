@@ -6,7 +6,7 @@ import AddUserScreen from './AddUserScreen';
 import UpdateUserScreen from './UpdateUserScreen';
 import UpdateCardScreen from './UpdateCardScreen';
 import LoginScreen from './LoginScreen';
-import SignupScreen from './SignupScreen';
+import SignupScreen from './SignupScreen.js';
 import AddPetScreen from './AddPetScreen';
 import PetActivityScreen from './PetActivityScreen';
 import PetVillageScreen from './PetVillageScreen';

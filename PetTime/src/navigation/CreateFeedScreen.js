@@ -14,7 +14,7 @@ import {
   Alert,
   Dimensions,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from "react-native-image-picker"
 
 const win = Dimensions.get('window');
@@ -119,7 +119,7 @@ class CreateFeedScreen extends Component {
                         ac_location: this.state.ac_location,
                         creator_id: value};
 
-        return await fetch('http://49.247.37.15' + '/api/chat/AddPetFeeds', {
+        return await fetch('http://10.0.2.2:3000' + '/api/chat/AddPetFeeds', {
           method: 'post',
           body: formData,
           'headers': {

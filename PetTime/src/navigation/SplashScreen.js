@@ -78,7 +78,7 @@ class SplashScreen extends Component {
                       longtitude: longtitude1//check this later for gps
         };
 
-      return await fetch('http://49.247.37.15' + '/api/chat/getPetPlaces', {
+      return await fetch('http://10.0.2.2:3000' + '/api/chat/getPetPlaces', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {

@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import CheckBox from '@react-native-community/checkbox';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const win = Dimensions.get('window');
 import {NavigationService} from '../common';
@@ -53,7 +53,7 @@ class UpdateUserScreen extends Component {
       const data1 = { user_id: value
       };
       //const loc_id = this.props.route.params.location_id;
-      return await fetch('http://49.247.37.15' + '/api/chat/getPetUser', {
+      return await fetch('http://10.0.2.2:3000' + '/api/chat/getPetUser', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {
@@ -127,7 +127,7 @@ class UpdateUserScreen extends Component {
           user_sex: this.state.user_sex
       };
       //const loc_id = this.props.route.params.location_id;
-      return await fetch('http://49.247.37.15' + '/api/chat/updatePetUser', {
+      return await fetch('http://10.0.2.2:3000' + '/api/chat/updatePetUser', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {

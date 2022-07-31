@@ -14,7 +14,7 @@ import {
   Alert,
   Dimensions,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import * as ImagePicker from "react-native-image-picker"
 
@@ -214,7 +214,7 @@ class CreateMeetScreen extends Component {
                         ac_right: this.state.ac_right,
                         creator_id: value};
 
-        return await fetch('http://49.247.37.15' + '/api/chat/AddPetMeets', {
+        return await fetch('http://10.0.2.2:3000' + '/api/chat/AddPetMeets', {
           method: 'post',
           body: formData,
           'headers': {

@@ -15,7 +15,7 @@ import {
   Dimensions,
   FlatList
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const win = Dimensions.get('window');
@@ -64,7 +64,7 @@ class ActivityChatScreen extends Component {
           creator_id: value
         };
 
-        return await fetch('http://49.247.37.15' + '/api/chat/AddChatting1', {
+        return await fetch('http://10.0.2.2:3000' + '/api/chat/AddChatting1', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {
@@ -104,7 +104,7 @@ class ActivityChatScreen extends Component {
       const data1 = { activity_id: this.props.navigation.getParam('activity_id')
         };
       //const loc_id = this.props.route.params.location_id;
-      return await fetch('http://49.247.37.15' + '/api/chat/getPetChatting1', {
+      return await fetch('http://10.0.2.2:3000' + '/api/chat/getPetChatting1', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {

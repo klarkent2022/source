@@ -16,7 +16,7 @@ import {
   Alert,
   FlatList,
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const win = Dimensions.get('window');
@@ -80,7 +80,7 @@ class PetVillageFeedScreen extends Component {
 
     getData = async () => {
       //const loc_id = this.props.route.params.location_id;
-      return await fetch('http://49.247.37.15' + '/api/chat/getPetFeeds', {
+      return await fetch('http://10.0.2.2:3000' + '/api/chat/getPetFeeds', {
           method: 'post',
           'headers': {
               'Content-Type': 'application/json',

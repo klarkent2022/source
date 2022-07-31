@@ -26,16 +26,16 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 import { NaverLogin, getProfile } from "@react-native-seoul/naver-login";
 
-import {appleAuth, AppleButton } from '@invertase/react-native-apple-authentication';
+// import {appleAuth, AppleButton } from '@invertase/react-native-apple-authentication';
 
-import {
-  KakaoOAuthToken,
-  KakaoProfile,
-  getProfile as getKakaoProfile,
-  login,
-  logout,
-  unlink,
-} from '@react-native-seoul/kakao-login';
+// import {
+//   KakaoOAuthToken,
+//   KakaoProfile,
+//   getProfile as getKakaoProfile,
+//   login,
+//   logout,
+//   unlink,
+// } from '@react-native-seoul/kakao-login';
 
 const win = Dimensions.get('window');
 
@@ -56,10 +56,10 @@ const androidKeys = {
 };
 
 
-const signInWithKakao = async () => {
-  let result = await login();
-  console.log('result' + result);
-};
+// const signInWithKakao = async () => {
+//   let result = await login();
+//   console.log('result' + result);
+// };
 
 const klogin = async () => {
 
@@ -98,26 +98,26 @@ const getUserProfile = async () => {
   console.log("profileResult", profileResult);
 };
 
-async function onAppleButtonPress() { 
-  // Start the sign-in request 
-  const appleAuthRequestResponse = await appleAuth.performRequest({ 
-    requestedOperation: appleAuth.Operation.LOGIN, 
-    requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME], 
-  }); 
+// async function onAppleButtonPress() { 
+//   // Start the sign-in request 
+//   const appleAuthRequestResponse = await appleAuth.performRequest({ 
+//     requestedOperation: appleAuth.Operation.LOGIN, 
+//     requestedScopes: [appleAuth.Scope.EMAIL, appleAuth.Scope.FULL_NAME], 
+//   }); 
   
-  // Ensure Apple returned a user identityToken 
-  if (!appleAuthRequestResponse.identityToken) 
-  { 
-    throw 'Apple Sign-In failed - no identify token returned'; 
-  } 
+//   // Ensure Apple returned a user identityToken 
+//   if (!appleAuthRequestResponse.identityToken) 
+//   { 
+//     throw 'Apple Sign-In failed - no identify token returned'; 
+//   } 
   
-  // Create a Firebase credential from the response 
-  const { identityToken, nonce } = appleAuthRequestResponse; 
-  const appleCredential = auth.AppleAuthProvider.credential(identityToken, nonce); 
+//   // Create a Firebase credential from the response 
+//   const { identityToken, nonce } = appleAuthRequestResponse; 
+//   const appleCredential = auth.AppleAuthProvider.credential(identityToken, nonce); 
   
-  // Sign the user in with the credential 
-  return auth().signInWithCredential(appleCredential); 
-}
+//   // Sign the user in with the credential 
+//   return auth().signInWithCredential(appleCredential); 
+// }
 
 
 
@@ -150,7 +150,7 @@ checkLogin1 = async(check_email) => {
   console.log(check_email);
       const data1 = { email: check_email};
 
-        return await fetch('http://49.247.37.15' + '/api/chat/checkLogin', {
+        return await fetch('http://10.0.2.2:3000' + '/api/chat/checkLogin', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {
@@ -256,9 +256,9 @@ function SignupScreen(){
                 <Image source={require('./assets/facebook.png')}  style={styles.menuItem2} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>signInWithKakao()}>
+            {/* <TouchableOpacity onPress={()=>signInWithKakao()}>
                 <Image source={require('./assets/kakao.png')}  style={styles.menuItem2} />
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity onPress={()=>onGoogleButtonPress()}>
                 <Image source={require('./assets/google.png')}  style={styles.menuItem2} />

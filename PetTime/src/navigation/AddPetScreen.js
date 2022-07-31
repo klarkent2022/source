@@ -13,7 +13,7 @@ import {
   Button,
   Dimensions
 } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import CheckBox from '@react-native-community/checkbox';
 import * as ImagePicker from "react-native-image-picker"
 
@@ -76,7 +76,7 @@ class AddPetScreen extends Component {
                         user_sex: this.props.navigation.getParam('user_sex'),
                       };
 
-        return await fetch('http://49.247.37.15' + '/api/chat/regUser', {
+        return await fetch('http://10.0.2.2:3000' + '/api/chat/regUser', {
           method: 'post',
           body: JSON.stringify(data1),
           'headers': {
